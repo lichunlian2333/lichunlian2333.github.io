@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #222;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .stage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+        .content{
+            width: 75px;
+            height: 125px;
+            /* border: 1px solid blueviolet; */
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .content:nth-child(2n) {
+            margin-right: 50px;
+        }
+        .content:nth-child(2n + 1) {
+            margin-right: 25px;
+        }
+        .content li{
+            width: 25px;
+            height: 25px;
+            /* background-color: blueviolet; */
+            padding: 2px;
+            box-sizing: border-box;
+            background-clip: content-box;
+            transition: all 0.3s;
+            transform: scale(0.5);
+        }
+        .content li.active{
+            background-color: blueviolet;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <section class="stage"></section>
+
+    <script src="./main.js"></script>
+    <script>
+        // var x = new Num(3);
+        function Num(x){
+            this.num = x;
+        }
+
+        Num.prototype.caclCoor = function(){
+            return matrix[this.num];
+        };
+        Num.prototype.create = function(){
+            this.coor = this.caclCoor();
+            var ul = document.createElement("ul");
+            ul.classList.add("content");
+            var arr = [];
+
+            this.coor.forEach(function(row,rowIndex){
+                var rowArray = [];
+                row.forEach(function(col,colIndex){
+                    // console.log(row,col);
+                    var lis = document. createElement("li");
+
+                    rowArray.push(lis);
+                    ul.appendChild(lis);
+                    
+                });
+                arr.push(rowArray);
+            });
+            this.arr = arr;
+            document.querySelector(".stage").appendChild(ul);
+            // console.log(x);
+            return this;
+        };
+
+        Num.prototype.upDate = function(n){
+            // 更新num coor
+            if(n !== undefined){
+                this.num = n;
+            }
+            this.coor = this.caclCoor();
+           
+            
+            var that = this;
+            this.coor.forEach(function(row,rowIndex){
+                row.forEach(function(col,colIndex){
+                    if(col){
+                        that.arr[rowIndex][colIndex].classList.add("active");
+                    }else{
+                        that.arr[rowIndex][colIndex].classList.remove("active");
+                    }
+                    
+                });
+            });
+            return this;
+        }
+        // x.create();
+        // x.upDate();
+
+        function padStart(n) {
+        return (n = n < 10 ? "0" + n : String(n));
+      }
+
+      function timeToArray() {
+        var d = new Date();
+        var hh = d.getHours();
+        var mm = d.getMinutes();
+        var ss = d.getSeconds();
+        hh = padStart(hh);
+        mm = padStart(mm);
+        ss = padStart(ss);
+        return (hh + mm + ss).split("");
+      }
+
+      //
+      var time = timeToArray();
+      var nums = [];
+      time.forEach(function (n) {
+        // console.log(element);
+        nums.push(new Num(n).create().upDate());
+      });
+
+      //   setInterval(() => {
+      //     var newTime = timeToArray();
+      //     newTime.forEach(function (n, i) {
+      //       nums[i].upDate(n);
+      //     });
+      //   }, 1000);
+
+      setInterval(() => {
+        var newTime = timeToArray();
+
+        newTime.forEach(function (n, i) {
+          if (n !== time[i]) {
+            nums[i].upDate(n);
+          }
+        });
+        time = newTime;
+      }, 500);
+        
+    </script>
+</body>
+</html>
