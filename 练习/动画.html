@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .girl{
+            width: 180px;
+            height: 300px;
+            background-image: url(./sprites.png);
+            animation: myGirl 1s infinite;
+            animation-timing-function: steps(7);
+        }
+        @keyframes myGirl{
+            from{
+                background-position-x: 0;
+            }
+            to{
+                background-position-x: -1260px;
+
+            }
+        }
+
+        .zombie{
+            width: 200px;
+            height: 312px;
+            background-image: url(./walkingdead.png);
+            animation: myZombie 1s infinite;
+            animation-timing-function: steps(10);
+        }
+        @keyframes myZombie{
+            from{
+                background-position-x: 0;
+            }
+            to{
+                background-position-x: -2000px;
+            }
+        }
+
+        .bashen{
+            width: 76.5px;
+            height: 81px;
+            background-image: url("./sprites-IORI.jpg");
+            animation: myBashen 1s infinite;
+            animation-timing-function: steps(26);
+            /* animation-play-state: paused; */
+        }
+        @keyframes myBashen{
+            from{
+                background-position-x: -76.5px;
+            }
+            to{
+                background-position-x: -1989px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="girl"></div>    
+
+    <div class="zombie"></div>
+
+    <div class="bashen"></div>
+</body>
+</html>

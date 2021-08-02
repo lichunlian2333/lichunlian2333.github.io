@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  background-color: #1f2029;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+body .box {
+  width: 440px;
+  height: 440px;
+  background-color: #2a2b38;
+  background-image: url("https://www.17sucai.com/preview/1097306/2020-11-18/dlcc/images/pat.svg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  position: relative;
+  color: white;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+}
+body .box.active {
+  transform: rotateY(-180deg);
+}
+body .box form {
+  box-sizing: border-box;
+  padding: 40px 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .box form h1 {
+  text-align: center;
+}
+body .box form .text,
+body .box form .email,
+body .box form .password {
+  width: 100%;
+  height: 40px;
+  background-color: #1f2029;
+  margin: 15px 0;
+  border-radius: 5px;
+  display: flex;
+}
+body .box form .text span,
+body .box form .email span,
+body .box form .password span {
+  width: 10%;
+  height: 100%;
+  line-height: 40px;
+  text-align: right;
+}
+body .box form .text span.fa,
+body .box form .email span.fa,
+body .box form .password span.fa {
+  font-size: 22px;
+  color: #ffeba7;
+}
+body .box form .text input,
+body .box form .email input,
+body .box form .password input {
+  width: 90%;
+  height: 100%;
+  background-color: #1f2029;
+  border: none;
+  outline: none;
+  color: #ccc;
+  font-size: 18px;
+  margin-left: 8px;
+}
+body .box form input.submit {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background-color: #1f2029;
+  border: none;
+  outline: none;
+  margin: 15px 0;
+  line-height: 3;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ffeba7;
+  transition: all 0.3s;
+}
+body .box form input.submit:hover {
+  background-color: #f3d97f;
+}
+body .box form .info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+body .box form.login {
+  transform: translateZ(50px);
+}
+body .box form.register {
+  transform: translateZ(-50px) rotateY(180deg);
+}
+body .box form.register .info {
+  justify-content: center;
+}

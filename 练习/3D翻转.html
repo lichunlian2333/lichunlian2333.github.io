@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fontIcon/css/font-awesome.css">
+    <link rel="stylesheet" href="./3D翻转.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form class="login">
+            <h1>登录</h1>
+            <div class="email">
+                <span class="fa fa-at"></span>
+                <input type="email" placeholder="请输入电子邮箱" />
+            </div>
+            <div class="password">
+                <span class="fa fa-lock"></span>
+                <input type="password" placeholder="请输入密码" />
+            </div>
+            <input class="submit" type="submit" value="登录" />
+
+            <div class="info">
+                <span>没有帐号？<i>立即注册</i></span>
+                <span>忘记密码？</span>
+            </div>
+        </form>
+
+        <form class="register">
+            <h1>注册</h1>
+            <div class="text">
+                <span class="fa fa-user-o"></span>
+                <input type="text" placeholder="请输入用户名">
+            </div>
+            <div class="email">
+                <span class="fa fa-at"></span>
+                <input type="email" placeholder="请输入电子邮箱" />
+            </div>
+            <div class="password">
+                <span class="fa fa-lock"></span>
+                <input type="password" placeholder="请输入密码" />
+            </div>
+            <input class="submit" type="submit" value="注册" />
+
+            <div class="info">
+                <span>已有帐号？<i>立即登录</i></span>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.querySelectorAll(".box form .info i").forEach(function (item) {
+        // console.log(item);
+        item.addEventListener("click", function () {
+          document.querySelector(".box").classList.toggle("active");
+        });
+      });
+    </script>
+
+</body>
+</html>
