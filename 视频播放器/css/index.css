@@ -1,0 +1,151 @@
+.wrapper {
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+.wrapper-video {
+    width: 100%;
+}
+.wrapper-video > div {
+   padding: 10px 10px;
+   background-color: #000;
+   height: 400px;
+   text-align: center;
+   line-height: 400px;
+   /* overflow: hidden; */
+}
+.wrapper-video > div video {
+  width: 100%;
+  height: 100%;
+}
+.wrapper-contrl {
+    border-top: 1px solid #333;
+    height: 60px;
+    padding: 10px 0;
+    background-color: #000;
+    position: relative;
+}
+.wrapper-contrl > div  {
+    height: 60px;
+}
+.wrapper-contrl > div .left  {
+    width: 120px;
+    height: 60px;
+    /* background-color: #333; */
+}
+.wrapper-contrl > div .right {
+    height: 60px;
+    overflow: hidden;
+    /* background-color: deepskyblue; */
+}
+
+.wrapper-contrl .left .btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:0;
+    outline: none;
+    cursor: pointer;
+    margin: 5px auto;
+    display: none;
+}
+.wrapper-contrl .left .btn.active {
+    display: block;
+}
+.wrapper-contrl .left .btn span {
+    font-size: 20px;
+}
+
+.wrapper-contrl .right .top {
+    height: 26px;
+    padding: 0 20px;
+    /* background-color: green; */
+    overflow: hidden;
+}
+.wrapper-contrl .right .bottom {
+    height: 34px;
+    padding: 0 20px;
+    color: #fff;
+}
+.wrapper-contrl .top ul {
+    width: 100%;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    position: relative;
+}
+.wrapper-contrl .top ul li {
+    width: 0px;
+    height: 6px;
+    background-color: red;
+    border-radius: 5px;
+}
+.wrapper-contrl .top ul li .bar{
+    position: absolute;
+    width: 12px;
+    height: 24px;
+    background-color: #ccc;
+    cursor: pointer;
+    position: absolute;
+    top: -9px; /* -(24 - 6 ) /2 = -9*/
+    left: 0px;
+    border-radius: 4px;
+}
+.wrapper-contrl .bottom .time {
+     height: 34px;
+     line-height: 34px;
+}
+.wrapper-contrl .bottom .time span {
+    color: #f0f0f0;
+}
+.wrapper-contrl .bottom .speed {
+    height: 34px;
+    line-height: 34px;
+    cursor: pointer;
+}
+.speed-box {
+    width: 100px;
+    height: 40px !important;
+    background-color: pink;
+    position: absolute;
+    top: 36px;
+    right: 20px;
+    z-index: 1000000;
+}
+.speed-box .speed-box-list {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1000000;
+}
+/* 下拉菜单的样式 */
+.dropdown-menu {
+    width: 100%;
+    background-color: #ccc;
+    position: absolute;
+    bottom: 0px;
+}
+.title {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    text-align: center;
+}
+.select {
+    display: none;
+}
+.select li {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #fff;  
+    padding: 0 15px;
+    cursor: pointer;
+}
+.select li:hover {
+    background-color: #f0f0f0;
+}

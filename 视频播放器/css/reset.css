@@ -1,0 +1,28 @@
+body,
+html {
+    margin: 0;
+    width: 100%;
+}
+video {
+    width: 100%;
+    /* display: block; */
+    vertical-align: middle;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* 公共样式 */
+.f-left {
+    float: left;
+}
+.f-right {
+    float: right;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
