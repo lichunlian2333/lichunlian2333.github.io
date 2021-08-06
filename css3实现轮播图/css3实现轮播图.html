@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css实现轮播图</title>
+    <style>
+        @keyframes move {
+            0% {
+                transform: translateX(0%);
+            }
+
+            20% {
+                transform: translateX(0%);
+            }
+
+            25% {
+                transform: translateX(-500px);
+            }
+
+            45% {
+                transform: translateX(-500px);
+            }
+
+            50% {
+                transform: translateX(-1000px);
+            }
+
+            70% {
+                transform: translateX(-1000px);
+            }
+
+            75% {
+                transform: translateX(-1500px);
+            }
+
+            95% {
+                transform: translateX(-1500px);
+            }
+
+            100% {
+                transform: translateX(-2000px);
+            }
+
+        }
+
+        .wrap {
+            width: 500px;
+            height: 400px;
+            position: relative;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        .list {
+            width: 500%;
+            animation: move 5s linear infinite;
+        }
+
+        .list li {
+            float: left;
+            width: 500px;
+            height: 400px;
+        }
+
+        .list img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="list">
+            <li><img src="./img/1.jpg" alt="" /></li>
+            <li><img src="./img/2.jpg" alt="" /></li>
+            <li><img src="./img/3.jpg" alt="" /></li>
+            <li><img src="./img/4.jpg" alt="" /></li>
+            <li><img src="./img/1.jpg" alt="" /></li>
+        </ul>
+    </div>
+</body>
+
+</html>

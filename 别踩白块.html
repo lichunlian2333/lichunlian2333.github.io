@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .input {
+            margin-top: 44px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            margin-left: 50px;
+            border: 1px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game {
+            position: absolute;
+            left: 0;
+            top: -50px;
+        }
+
+        .row div {
+            width: 98px;
+            height: 98px;
+            border: 1px solid #ccc;
+            float: left;
+        }
+
+        .row .black {
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="input" value="0" disabled="disabled">
+    <!-- 外层盒子 -->
+    <div class="box">
+        <!-- 内层游戏区域 -->
+        <div class="game">
+            <div class="row">
+                <div class="black"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="row">
+                <div></div>
+                <div class="black"></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="row">
+                <div></div>
+                <div></div>
+                <div class="black"></div>
+                <div></div>
+            </div>
+
+            <div class="row">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="black"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./tool.js"></script>
+    <script>
+
+        // 定义一个Game构造函数
+        function Game(element) {
+            // 添加属性(多个方法需要使用到同一个变量，就可以写成属性，如果只有一个方法使用这个变量，那就使用变量即可)
+            // 下落速度
+            this.speed = 1;
+
+            // 定时器标识符属性
+            this.timer = null;
+
+            // game游戏区的dom对象
+            this.gameDom = null;
+
+            // 游戏分数
+            this.score = 0;
+
+            // 使用一个属性代表当前游戏状态是否已经结束
+            var gameover = false;
+
+            // 调用初始化方法(开机按钮)
+            this.init(element);
+        }
+
+        // 通过构造函数的原型对象添加方法
+        // 需要有哪些方法
+        // 1.游戏区域下落的方法
+        Game.prototype.moveDown = function () {
+            // 缓存this
+            var that = this;
+            // 开启定时器
+            this.timer = window.setInterval(function () {
+                // 获取当前top值
+                var currentTop = parseInt(getStyle(that.gameDom, "top"));
+                // 设置game游戏区域的top值
+                // gameDom对象.style.top = 当前top值+速度+"px";
+                that.gameDom.style.top = currentTop + that.speed + "px";
+
+                // 判断当前top值是否>=0
+                if (currentTop >= 0) {
+
+                    // 调用删除一行的方法
+                    that.removeRow();
+                    // 调用创建新的一行的方法
+                    that.createRow();
+
+                     // 调用判断触底了，游戏是否结束的方法
+                     that.isTouchBottom();
+                }
+
+            }, 15);
+
+        }
+        // 2.创建新的一行的方法
+        Game.prototype.createRow = function () {
+            var newRow = document.createElement("div");
+            newRow.classList.add("row");
+
+            // 获取随机1-4之间的整数
+            var randomNum = getRandom(1,4);
+
+            for (var j = 1; j <= 4; j++) {
+                var newColumn = document.createElement("div");
+
+                // 添加随机黑块
+                if(randomNum == j){
+                    newColumn.classList.add("black");
+                }
+
+                newRow.appendChild(newColumn);
+
+            }
+            this.gameDom.insertBefore(newRow, this.gameDom.firstElementChild);
+
+            // 设置游戏区的top值为-100px
+            this.gameDom.style.top = "-100px";
+        }
+        // 3.判断触底的时候，删除一行的方法
+        Game.prototype.removeRow = function () {
+            if(this.gameDom.children.length >= 5){
+                this.gameDom.lastElementChild.remove();
+            }
+        }
+        // 4.游戏区域点击的方法
+        Game.prototype.handlerClick = function () {
+            var that = this;
+            // 事件委托，给游戏区域绑定点击事件
+            this.gameDom.onclick = function(e){
+                if(!that.gameover){
+                    if (e.target.classList.contains("black")) {
+                        e.target.classList.remove("black");
+                        // 加分
+                        that.score++;
+                        // 设置文本框的值
+                        $("input").value = that.score;
+
+                        if(that.score % 5 ==0){
+                            that.speed++;
+                        }
+
+                    } else {
+                        alert("游戏结束");
+                        window.clearInterval(that.timer);
+                        // 改变gameover的值
+                        that.gameover = true;
+                    }
+                }else{
+                    alert("游戏已经结束，请刷新页面重新开始");
+                }
+                
+            }
+        }
+        // 5.判断触底了，游戏是否结束的方法
+        Game.prototype.isTouchBottom = function () {
+            // 判断游戏最后一行里面所有的块是否存在.black类名。如果存在，那么就代表有黑块未被点击
+            for(var i = 0; i<this.gameDom.lastElementChild.children.length; i++){
+                if(this.gameDom.lastElementChild.children[i].classList.contains("black")){
+                    alert("游戏结束");
+                    window.clearInterval(this.timer);
+                    this.gameover = true;
+                }
+            }
+        }
+        // 6.初始化方法
+        Game.prototype.init = function (element) {
+            // 获取.game游戏区域的dom对象
+            this.gameDom = $(element);
+            this.moveDown();
+            this.handlerClick();
+        }
+        // 实例化Game对象
+        new Game(".game");
+    </script>
+</body>
+
+</html>
