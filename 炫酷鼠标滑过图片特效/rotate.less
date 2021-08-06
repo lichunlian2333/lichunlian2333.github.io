@@ -1,0 +1,209 @@
+body{
+    margin: 0;
+    padding: 0;
+    .row{
+        width: 80%;
+        border: 2px solid skyblue;
+        margin: 0px auto;
+        .col-sm-6{
+            float: left;
+            margin: 50px 100px;
+            .circle{
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                position: relative;
+           
+                a{
+                    text-decoration: none;
+                    
+                    &:hover .info{
+                        transition: all 1s linear;
+                        animation: xxx 0.3s linear 0s 1 normal forwards;
+                    }
+                    &:hover .img{
+                        animation: myzhuan 0.3s linear 0s 1 normal forwards;
+                    }
+
+                    .img{
+                        width: 300px;
+                        height: 300px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: -20px;
+                        left: -20px;
+                        z-index: -1;
+                        animation: zhuan 0.3s linear 0s 1 normal forwards;
+                        
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            z-index: -1;
+                        }
+                    }
+                    &::after{
+                        content: "";
+                        display: block;
+                        width: 300px;
+                        height: 300px;
+                        border: 20px solid rgba(255,255,255, .5);
+                        box-sizing: border-box;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: -20px;
+                        top: -20px;
+                        z-index: 0;
+                    }
+
+                    .info{
+                        width: 300px;
+                        height: 300px;
+                        background-color: rgba(0,0,0, .6);
+                        border-radius: 50%;
+                        position: absolute;
+                        top: -20px;
+                        left: -20px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 9;
+                        opacity: 0;
+
+                        h3{
+                            color: white;
+                            font-weight: 400;
+                            margin: 0;
+                            padding: 0;
+                            font-size: 30px;
+                            text-align: center;
+                            text-transform : uppercase;
+                            span{
+                                display: block;
+                            }
+                            &::after{
+                                content: "";
+                                display: block;
+                                width: 180px;
+                                height: 2px;
+                                margin-top: 10px;
+                                background-color: #ccc;
+                            }
+                        }
+                        p{
+                            color: rgb(255,255,255);
+                        
+                        }
+                    }
+                }
+            }
+
+            .right_to_left{
+                a{
+                    &:hover .info{
+                        transition: all 1s linear;
+                        animation: yyy 0.3s linear 0s 1 normal forwards;
+                    }
+                }
+            }
+
+            .top_to_bottom{
+                a{
+                    &:hover .info{
+                        transition: all 1s linear;
+                        animation: zzz 0.3s linear 0s 1 normal forwards;
+                    }
+                }
+            }
+
+            .bottom_to_top{
+                a{
+                    &:hover .info{
+                        transition: all 1s linear;
+                        animation: aaa 0.3s linear 0s 1 normal forwards;
+                    }
+                }
+            }
+        }
+        &:after {
+            content: "";
+            display: block;
+            font-size: 0;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+          }
+    }
+}
+@keyframes xxx {
+    from{
+        transform: translateX(-400px);
+        opacity:0;
+    }
+    to{
+        transform: translateX(0);
+        opacity:0.6;
+    }
+}
+
+@keyframes yyy {
+    from{
+        transform: translateX(400px);
+        opacity:0;
+    }
+    to{
+        transform: translateX(0);
+        opacity:0.6;
+    }
+}
+
+@keyframes zzz {
+    from{
+        transform: translateY(-400px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0);
+        opacity:0.6;
+    }
+}
+
+@keyframes aaa {
+    from{
+        transform: translateY(400px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0);
+        opacity:0.6;
+    }
+}
+
+// @keyframes aaa1 {
+//     from{
+//         transform: translateY(0);
+//         opacity:0.6;
+//     }
+//     to{
+//         transform: translateY(-400px);
+//         opacity:0;
+//     }
+// }
+
+@keyframes myzhuan {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-90deg);
+    }
+}
+@keyframes zhuan {
+    from{
+        transform: rotate(-90deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}

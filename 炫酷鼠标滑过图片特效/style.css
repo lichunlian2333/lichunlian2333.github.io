@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+body .wrapper {
+  width: 800px;
+  height: 400px;
+  margin: 50px auto;
+  border: 2px solid #ccc;
+  position: relative;
+  display: flex;
+}
+body .wrapper .item1 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .wrapper .item1 .img {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  position: absolute;
+}
+body .wrapper .item1 .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+body .wrapper .item1 .box {
+  width: 266px;
+  height: 266px;
+  border-radius: 50%;
+}
+body .wrapper .item1 .box .spinner {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 15px solid transparent;
+  box-sizing: border-box;
+  border-top-color: #ecab18;
+  border-left-color: #ecab18;
+  border-bottom-color: #1ad280;
+  border-right-color: #1ad280;
+}
+body .wrapper .item1 .box .spinner:hover {
+  animation: myzhuan 1s linear 0s 1 normal forwards ;
+}
+body .wrapper .item1 .box:hover .info {
+  transform: translateY(0);
+}
+body .wrapper .item1 .box:hover .spinner {
+  animation: myzhuan 1s linear 0s 1 normal forwards ;
+}
+body .wrapper .item1 .box .info {
+  width: 266px;
+  height: 266px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transform: translateY(-400px);
+}
+body .wrapper .item1 .box .info .info-back {
+  height: 266px;
+  width: 266px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .wrapper .item1 .box .info .info-back h3 {
+  color: white;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+}
+body .wrapper .item1 .box .info .info-back h3 span {
+  display: block;
+}
+body .wrapper .item1 .box .info .info-back h3::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 2px;
+  margin-top: 5px;
+  background-color: #ccc;
+}
+body .wrapper .item1 .box .info .info-back p {
+  color: rgba(255, 255, 255, 0.7);
+}
+body .wrapper .item2 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .wrapper .item2 .img {
+  position: absolute;
+  top: 67px;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+}
+body .wrapper .item2 .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+body .wrapper .item2 .box {
+  width: 266px;
+  height: 266px;
+  border-radius: 50%;
+}
+body .wrapper .item2 .box:hover .info {
+  transform: translateY(0);
+}
+body .wrapper .item2 .box:hover .spinner {
+  animation: myzhuan 1s linear 0s 1 normal forwards ;
+}
+body .wrapper .item2 .box .spinner {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  top: 52px;
+  left: 450px;
+  border: 15px solid transparent;
+  box-sizing: border-box;
+  border-top-color: #ecab18;
+  border-left-color: #ecab18;
+  border-bottom-color: #1ad280;
+  border-right-color: #1ad280;
+}
+body .wrapper .item2 .box .info {
+  width: 266px;
+  height: 266px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transform: translateY(-400px);
+}
+body .wrapper .item2 .box .info .info-back {
+  height: 266px;
+  width: 266px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .wrapper .item2 .box .info .info-back h3 {
+  color: white;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+}
+body .wrapper .item2 .box .info .info-back h3 span {
+  display: block;
+}
+body .wrapper .item2 .box .info .info-back h3::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 2px;
+  margin-top: 5px;
+  background-color: #ccc;
+}
+body .wrapper .item2 .box .info .info-back p {
+  color: rgba(255, 255, 255, 0.7);
+}
+@keyframes myzhuan {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,207 @@
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    .wrapper{
+        width: 800px;
+        height: 400px;
+        margin: 50px auto;
+        border: 2px solid #ccc;
+        position: relative;
+        display: flex;
+        .item1{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .img{
+                width: 270px;
+                height: 270px;
+                border-radius: 50%;
+                position: absolute;
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .box{
+                width: 266px;
+                height: 266px;
+                border-radius: 50%;
+
+                .spinner{
+                    position: absolute;
+                    top: 50px;
+                    left: 50px;
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    border: 15px solid transparent;
+                    box-sizing: border-box;       
+                    border-top-color: rgb(236,171,24);
+                    border-left-color: rgb(236,171,24);
+                    border-bottom-color: rgb(26,210,128);
+                    border-right-color: rgb(26,210,128); 
+                    &:hover{
+                        animation: myzhuan 1s linear 0s 1 normal forwards ;
+                    }
+                }
+                
+                &:hover .info{
+                    transform: translateY(0);
+                }
+                &:hover .spinner{
+                    animation: myzhuan 1s linear 0s 1 normal forwards ;
+                }
+                .info{
+                    width: 266px;
+                    height: 266px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, .4);
+                    z-index: 1000;
+                    transform: translateY(-400px);
+                    .info-back{
+                        height: 266px;
+                        width: 266px;
+                        border-radius: 50%;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        h3{
+                            color: white;
+                            font-weight: 400;
+                            margin: 0;
+                            padding: 0;
+                            font-size: 30px;
+                            span{
+                                display: block;
+                            }
+                            &::after{
+                                content: "";
+                                display: block;
+                                width: 180px;
+                                height: 2px;
+                                margin-top: 5px;
+                                background-color: #ccc;
+                            }
+                        }
+                        p{
+                            color: rgba(255,255,255,.7);
+                        }
+                       
+                    }
+                }
+            }
+        }
+        .item2{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .img{
+                position: absolute;
+                top: 67px;
+                width: 270px;
+                height: 270px;
+                border-radius: 50%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .box{
+                width: 266px;
+                height: 266px;
+                border-radius: 50%;
+
+                &:hover .info{
+                    transform: translateY(0);
+                }
+                &:hover .spinner{
+                    animation: myzhuan 1s linear 0s 1 normal forwards ;
+                }
+                
+                .spinner{
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 52px;
+                    left: 450px;
+                    border: 15px solid transparent;
+                    box-sizing: border-box;       
+                    border-top-color: rgb(236,171,24);
+                    border-left-color: rgb(236,171,24);
+                    border-bottom-color: rgb(26,210,128);
+                    border-right-color: rgb(26,210,128); 
+                }
+
+                .info{
+                    width: 266px;
+                    height: 266px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, .4);
+                    z-index: 1000;
+                    transform: translateY(-400px);
+                    .info-back{
+                        height: 266px;
+                        width: 266px;
+                        border-radius: 50%;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        h3{
+                            color: white;
+                            font-weight: 400;
+                            margin: 0;
+                            padding: 0;
+                            font-size: 30px;
+                            span{
+                                display: block;
+                            }
+                            &::after{
+                                content: "";
+                                display: block;
+                                width: 180px;
+                                height: 2px;
+                                margin-top: 5px;
+                                background-color: #ccc;
+                            }
+                        }
+                        p{
+                            color: rgba(255,255,255,.7);
+                        }
+                       
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@keyframes myzhuan {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+
