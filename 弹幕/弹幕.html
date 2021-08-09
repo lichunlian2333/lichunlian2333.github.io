@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            /* 去掉图片底部缝隙 */
+            vertical-align: bottom;
+        }
+        button,input{
+            outline: none;
+            border: none;
+        }
+        .box{
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+            overflow: hidden;
+        }
+        .video_box{
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+        .bg_img{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .danmu{
+            color: wheat;
+            /* border: 1px solid blue; */
+            position: absolute;
+            left: 800px;
+            top: 0;
+           /* 让文字强制一行显示，不换行  */
+            white-space: nowrap;
+            transition: left 6s linear;
+        }
+        .sendDanmu{
+            height: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        .sendDanmu .danmuCon{
+            width: 700px;   
+            height: 28px;
+            border: 1px solid #ccc;
+            background: #f4f4f4;
+            text-indent: 1em;
+            margin-left: 20px;
+        }
+        .biaoqing_btn{
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            left: 693px;
+            top: 14px;
+            cursor: pointer;
+        }
+        .send_btn{
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: #00a1d6;
+            position: absolute;
+            top: 10px;
+            left: 722px;
+            cursor: pointer;
+        }
+        .panel{
+            width: 394px;
+            background: #fff;
+            position: absolute;
+            right: 0;
+            top: -124px;
+            border: 1px solid #f0f0f0;
+            display: none;
+
+        }
+        li{
+            float: left;
+            margin-left: 1px;
+            margin-right: 1px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+        <div class="video_box">
+
+            <img class="bg_img" src="./images/bg.jpg" alt="">
+
+            <!-- <span class="danmu">我是弹幕内容</span> -->
+        </div>
+
+        <div class="sendDanmu">
+            <input type="text" class="danmuCon" placeholder="发个弹幕见证当下">
+
+            <img class="biaoqing_btn" src="./images/biaoqing.png" alt="">
+            
+            <div class="panel">
+                <ul>
+                    <li><img src="images/1.gif" alt=""></li>
+                    <li><img src="images/2.gif" alt=""></li>
+                    <li><img src="images/3.gif" alt=""></li>
+                    <li><img src="images/4.gif" alt=""></li>
+                    <li><img src="images/5.gif" alt=""></li>
+                    <li><img src="images/6.gif" alt=""></li>
+                    <li><img src="images/7.gif" alt=""></li>
+                    <li><img src="images/8.gif" alt=""></li>
+                    <li><img src="images/9.gif" alt=""></li>
+                    <li><img src="images/10.gif" alt=""></li>
+                    <li><img src="images/11.gif" alt=""></li>
+                    <li><img src="images/12.gif" alt=""></li>
+                    <li><img src="images/13.gif" alt=""></li>
+                    <li><img src="images/14.gif" alt=""></li>
+                    <li><img src="images/15.gif" alt=""></li>
+                    <li><img src="images/16.gif" alt=""></li>
+                    <li><img src="images/17.gif" alt=""></li>
+                    <li><img src="images/18.gif" alt=""></li>
+                    <li><img src="images/19.gif" alt=""></li>
+                    <li><img src="images/20.gif" alt=""></li>
+                    <li><img src="images/21.gif" alt=""></li>
+                    <li><img src="images/22.gif" alt=""></li>
+                    <li><img src="images/23.gif" alt=""></li>
+                    <li><img src="images/24.gif" alt=""></li>
+                    <li><img src="images/25.gif" alt=""></li>
+                    <li><img src="images/26.gif" alt=""></li>
+                    <li><img src="images/27.gif" alt=""></li>
+                    <li><img src="images/28.gif" alt=""></li>
+                    <li><img src="images/29.gif" alt=""></li>
+                    <li><img src="images/30.gif" alt=""></li>
+                    <li><img src="images/31.gif" alt=""></li>
+                    <li><img src="images/32.gif" alt=""></li>
+                    <li><img src="images/33.gif" alt=""></li>
+                    <li><img src="images/34.gif" alt=""></li>
+                    <li><img src="images/35.gif" alt=""></li>
+                    <li><img src="images/36.gif" alt=""></li>
+                    <li><img src="images/37.gif" alt=""></li>
+                    <li><img src="images/38.gif" alt=""></li>
+                    <li><img src="images/39.gif" alt=""></li>
+                    <li><img src="images/40.gif" alt=""></li>
+                    <li><img src="images/41.gif" alt=""></li>
+                    <li><img src="images/42.gif" alt=""></li>
+                    <li><img src="images/43.gif" alt=""></li>
+                    <li><img src="images/44.gif" alt=""></li>
+                    <li><img src="images/45.gif" alt=""></li>
+                    <li><img src="images/46.gif" alt=""></li>
+                    <li><img src="images/47.gif" alt=""></li>
+                    <li><img src="images/48.gif" alt=""></li>
+                    <li><img src="images/49.gif" alt=""></li>
+                    <li><img src="images/50.gif" alt=""></li>
+                    <li><img src="images/51.gif" alt=""></li>
+                    <li><img src="images/52.gif" alt=""></li>
+                    <li><img src="images/53.gif" alt=""></li>
+                    <li><img src="images/54.gif" alt=""></li>
+                    <li><img src="images/55.gif" alt=""></li>
+                    <li><img src="images/56.gif" alt=""></li>
+                    <li><img src="images/57.gif" alt=""></li>
+                    <li><img src="images/58.gif" alt=""></li>
+                    <li><img src="images/59.gif" alt=""></li>
+                    <li><img src="images/60.gif" alt=""></li>
+                    <li><img src="images/61.gif" alt=""></li>
+                    <li><img src="images/62.gif" alt=""></li>
+                    <li><img src="images/63.gif" alt=""></li>
+                    <li><img src="images/64.gif" alt=""></li>
+                    <li><img src="images/65.gif" alt=""></li>
+                    <li><img src="images/66.gif" alt=""></li>
+                    <li><img src="images/67.gif" alt=""></li>
+                    <li><img src="images/68.gif" alt=""></li>
+                    <li><img src="images/69.gif" alt=""></li>
+                    <li><img src="images/70.gif" alt=""></li>
+                    <li><img src="images/71.gif" alt=""></li>
+                    <li><img src="images/72.gif" alt=""></li>
+                    <li><img src="images/73.gif" alt=""></li>
+                    <li><img src="images/74.gif" alt=""></li>
+                    <li><img src="images/75.gif" alt=""></li>
+                </ul>
+            </div>
+            
+            <button class="send_btn">发送</button>
+        </div>
+    </div>
+
+    <script>
+        var send_btn = document.querySelector(".send_btn");
+        var danmuCon = document.querySelector(".danmuCon");
+        var video_box = document.querySelector(".video_box");
+        var biaoqing_btn = document.querySelector(".biaoqing_btn");
+        var panel = document.querySelector(".panel");
+
+
+        function getRandom(min,max){
+            return Math.floor(Math.random()*(max - min + 1) + min);
+        }
+
+        function regReplace(str){
+            return str.replace(/\[em_(\d{1,2})\]/g , 
+            function( rse ,$1){
+                return "<img src='images/"+$1+".gif'>";
+            })
+        }
+
+        send_btn.onclick = function(){
+            var content = regReplace( danmuCon.value );
+            // 创建弹幕span标签
+            var newSpan = document.createElement("span");
+            // 设置弹幕类名
+            newSpan.className = "danmu";
+            // 设置弹幕内容
+            newSpan.innerHTML = content;
+            // 把弹幕加入到.video_box中
+            video_box.appendChild(newSpan);
+            // console.log(video_box.offsetHeight);
+            // console.log(newSpan.offsetHeight);
+            newSpan.style.top = getRandom(0,video_box.offsetHeight - newSpan.offsetHeight) + "px";
+
+            newSpan.style.left = -newSpan.offsetWidth + "px";
+
+            // 过渡完成事件
+            newSpan.ontransitionend = function(){
+                this.remove();
+            }
+            danmuCon.value = "";
+
+        }
+
+        var isShow = false;
+        biaoqing_btn.onclick = function(){
+            if(isShow){
+                panel.style.display = "none";
+
+            }else{
+                panel.style.display = "block";
+
+            }
+            isShow = !isShow;
+        }
+
+        // 事件委托
+        panel.onclick = function(e){
+            if(e.target.nodeName  == "IMG");
+            var imgSrc = e.target.src;
+            var arr = imgSrc.split("/");
+            var filename = arr[arr.length-1];
+            // console.log(filename);
+            var pos = filename.lastIndexOf(".");
+            // console.log(pos);
+            var imgNum = filename.substr(0,pos);
+            // console.log(imgNum);
+
+            danmuCon.value += `[em_${imgNum}]`;
+
+            // 隐藏表情面板
+            panel.style.display = "none";
+            isShow = false;
+
+        }
+
+        danmuCon.onkeyup = function(e){
+            if(e.keyCode == 13){
+                send_btn.onclick();
+            }
+        }
+    </script>
+</body>
+</html>
